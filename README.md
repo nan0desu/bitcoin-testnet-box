@@ -1,6 +1,8 @@
 # bitcoin-testnet-box
 [![docker pulls](https://img.shields.io/docker/pulls/nan0desu/bitcoin-testnet-box.svg?style=flat)](https://hub.docker.com/r/nan0desu/bitcoin-testnet-box/)
 
+(Updated to bitcoin 0.20 and ubuntu 20.04)
+
 Create your own private bitcoin testnet
 
 You must have `bitcoind` and `bitcoin-cli` installed on your system and in the
@@ -86,6 +88,11 @@ bitcoin-cli -datadir=2  getinfo
 }
 ```
 
+## Generate a wallet address for the first wallet
+```
+$ make address1
+```
+
 ## Generating blocks
 
 Normally on the live, real, bitcoin network, blocks are generated, on average,
@@ -93,21 +100,21 @@ every 10 minutes. Since this testnet-in-box uses Bitcoin Core's (bitcoind)
 regtest mode, we are able to generate a block on a private network
 instantly using a simple command.
 
-To generate a block:
+To generate a block: (be sure to change the ADDRESS value below to wallet address generated in the prior command)
 
 ```
-$ make generate
+$ make generate ADDRESS=[bitcoin address]
 ```
 
 To generate more than 1 block:
 
 ```
-$ make generate BLOCKS=10
+$ make generate BLOCKS=10 ADDRESS=[bitcoin address]
 ```
 
 ## Need to generate at least 100 blocks before there will be a balance in the first wallet
 ```
-$ make generate BLOCKS=200
+$ make generate BLOCKS=200 ADDRESS=[bitcoin address]
 ```
 
 ## Verify that there is a balance on the first wallet
@@ -121,10 +128,10 @@ $ make address2
 ```
 
 ## Sending bitcoins
-To send bitcoins that you've generated to the second wallet: (be sure to change the ADDRESS value below to wallet address generated in the prior command)
+To send bitcoins that you've generated to the second wallet: 
 
 ```
-$ make sendfrom1 ADDRESS=mxwPtt399zVrR62ebkTWL4zbnV1ASdZBQr AMOUNT=10
+$ make sendfrom1 ADDRESS=[bitcoin address] AMOUNT=10
 ```
 
 ## Does the balance show up?
@@ -135,7 +142,7 @@ $ make getinfo
 
 ## Generate another block
 ```
-$ make generate
+$ make generate ADDRESS=[bitcoin address]
 ```
 
 ## Stopping the testnet-box
