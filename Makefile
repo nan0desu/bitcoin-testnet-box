@@ -18,8 +18,11 @@ start-gui:
 	$(BITCOINGUI) $(B1) &
 	$(BITCOINGUI) $(B2) &
 
+generate-new:
+	ADDR="$(shell $(BITCOINCLI) $(B1) getnewaddress)"; $(BITCOINCLI) $(B1) generatetoaddress $(BLOCKS) $$ADDR
+
 generate:
-	$(BITCOINCLI) $(B1) generate $(BLOCKS)
+	$(BITCOINCLI) $(B1) generatetoaddress $(BLOCKS) $(ADDRESS)
 
 getinfo:
 	$(BITCOINCLI) $(B1) -getinfo

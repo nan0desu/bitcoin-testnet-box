@@ -1,16 +1,16 @@
 # bitcoin-testnet-box docker image
 
-# Ubuntu 14.04 LTS (Trusty Tahr)
-FROM ubuntu:14.04
-LABEL maintainer="Sean Lavine <lavis88@gmail.com>"
+# Ubuntu 20.04 LTS (focal)
+FROM ubuntu:20.04
+LABEL maintainer="Nika Topolchanskaya <nanodesuu@gmail.com>"
 
-# add bitcoind from the official PPA
+# add bitcoind from the luke-jr PPA
 # install bitcoind (from PPA) and make
 RUN apt-get update && \
 	apt-get install --yes software-properties-common && \
-	add-apt-repository --yes ppa:bitcoin/bitcoin && \
+	add-apt-repository --yes ppa:luke-jr/bitcoincore && \
 	apt-get update && \
-	apt-get install --yes bitcoind make
+	apt-get install --yes bitcoind make nano-tiny net-tools
 
 # create a non-root user
 RUN adduser --disabled-login --gecos "" tester
