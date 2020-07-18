@@ -50,41 +50,39 @@ $ make start
 
 ```
 $ make getinfo
-bitcoin-cli -datadir=1  getinfo
+bitcoin-cli -datadir=1  -getinfo
 {
-    "version" : 90300,
-    "protocolversion" : 70002,
-    "walletversion" : 60000,
-    "balance" : 0.00000000,
-    "blocks" : 0,
-    "timeoffset" : 0,
-    "connections" : 1,
-    "proxy" : "",
-    "difficulty" : 0.00000000,
-    "testnet" : false,
-    "keypoololdest" : 1413617762,
-    "keypoolsize" : 101,
-    "paytxfee" : 0.00000000,
-    "relayfee" : 0.00001000,
-    "errors" : ""
+  "version": 200000,
+  "blocks": 0,
+  "headers": 0,
+  "verificationprogress": 1,
+  "timeoffset": 0,
+  "connections": 1,
+  "proxy": "",
+  "difficulty": 4.656542373906925e-10,
+  "chain": "regtest",
+  "balance": 0.00000000,
+  "keypoolsize": 1000,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00001000,
+  "warnings": ""
 }
-bitcoin-cli -datadir=2  getinfo
+bitcoin-cli -datadir=2  -getinfo
 {
-    "version" : 90300,
-    "protocolversion" : 70002,
-    "walletversion" : 60000,
-    "balance" : 0.00000000,
-    "blocks" : 0,
-    "timeoffset" : 0,
-    "connections" : 1,
-    "proxy" : "",
-    "difficulty" : 0.00000000,
-    "testnet" : false,
-    "keypoololdest" : 1413617762,
-    "keypoolsize" : 101,
-    "paytxfee" : 0.00000000,
-    "relayfee" : 0.00001000,
-    "errors" : ""
+  "version": 200000,
+  "blocks": 0,
+  "headers": 0,
+  "verificationprogress": 1,
+  "timeoffset": 0,
+  "connections": 1,
+  "proxy": "",
+  "difficulty": 4.656542373906925e-10,
+  "chain": "regtest",
+  "balance": 0.00000000,
+  "keypoolsize": 1000,
+  "paytxfee": 0.00000000,
+  "relayfee": 0.00001000,
+  "warnings": ""
 }
 ```
 
