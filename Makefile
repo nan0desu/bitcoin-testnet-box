@@ -21,8 +21,11 @@ start-gui:
 generate-new:
 	ADDR="$(shell $(BITCOINCLI) $(B1) getnewaddress)"; $(BITCOINCLI) $(B1) generatetoaddress $(BLOCKS) $$ADDR
 
+generatetoa:
+    $(BITCOINCLI) $(B1) generatetoaddress $(BLOCKS) $(ADDRESS)
+
 generate:
-	$(BITCOINCLI) $(B1) generatetoaddress $(BLOCKS) $(ADDRESS)
+	$(BITCOINCLI) $(B1) -generate $(BLOCKS)
 
 getinfo:
 	$(BITCOINCLI) $(B1) -getinfo
@@ -47,3 +50,9 @@ stop:
 clean:
 	find 1/regtest/* -not -name 'server.*' -delete
 	find 2/regtest/* -not -name 'server.*' -delete
+
+docker-build:
+	docker build --tag bitcoin-testnet-box .
+
+docker-run:
+	docker run -ti bitcoin-testnet-box

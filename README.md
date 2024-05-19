@@ -85,6 +85,15 @@ bitcoin-cli -datadir=2  -getinfo
   "warnings": ""
 }
 ```
+## Creating wallets
+
+```
+bitcoin-cli -datadir=1 createwallet wallet1
+```
+
+```
+bitcoin-cli -datadir=2 createwallet wallet2
+```
 
 ## Generate a wallet address for the first wallet
 ```
@@ -180,3 +189,7 @@ or if you built the docker image yourself:
 
    `$ docker run -t -i -p 19001:19001 -p 19011:19011 bitcoin-testnet-box`
 
+## Running without docker
+To run without docker, one should download the supported Bitcoin core version. 
+To find the supported version, search for the `BITCOIN_CORE_VERSION` environment variable
+in the `Dockerfile` file.
