@@ -1,7 +1,7 @@
 # bitcoin-testnet-box
 [![docker pulls](https://img.shields.io/docker/pulls/nan0desu/bitcoin-testnet-box.svg?style=flat)](https://hub.docker.com/r/nan0desu/bitcoin-testnet-box/)
 
-(Updated to bitcoin 0.20 and ubuntu 20.04)
+(Updated to bitcoin 0.21.0 and ubuntu 24.04)
 
 Create your own private bitcoin testnet
 
